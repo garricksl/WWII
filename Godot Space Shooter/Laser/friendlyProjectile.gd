@@ -21,7 +21,7 @@ func _on_Area2D_body_enter( body ):
 	if(body.is_in_group("enemy") and body.is_in_group("ship")):
 		body.queue_free()
 		queue_free()
-		var pos = Vector2(randf()*500 + 100, randf()*200 + 50)
+		var pos = Vector2(randf()*1000 + 100, randf()*2000 + 50)
 		var ship = preload("res://Godot Space Shooter/Enemy/enemy.tscn")
 		var obj = ship.instance()
 		obj.set_pos(pos)

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 # class variables
-var PROJECTILE_SPEED = 300
+var PROJECTILE_SPEED = 900
 var shoot_dir = Vector2()
 func _ready():
 	set_pos(Vector2(100, 100))
