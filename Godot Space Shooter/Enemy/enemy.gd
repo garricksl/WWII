@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 var ex
-var spd = 4
-var MOVE_RANGE = randf() * 300 + 100
+var ey
+var spd = 1
+var MOVE_RANGE = randf() * 500 + 100
 
 func _ready():
 	enemy_set_pos(get_pos())
@@ -12,12 +13,16 @@ func _ready():
 func enemy_set_pos(newPos):
 	set_pos(newPos)
 	ex = newPos.x
+	ey = newPos.y
 
 func _process(delta):
 	var curX = get_pos().x
+	var curY = get_pos().y
 	if (curX < ex or curX > ex + MOVE_RANGE):
 		spd *= -1
-	set_pos(Vector2(curX + spd, get_pos().y))
+	if (curY < ey or curY > ey + MOVE_RANGE):
+		spd *= -1
+	set_pos(Vector2(curX + spd, curY + spd))
 
 #	var curX = get_pos().x
 #	if(curX < ex or curX > ex + MOVE_RANGE):

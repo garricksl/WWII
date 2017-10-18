@@ -16,17 +16,17 @@ func _process(delta):
 		newPos = Vector2(get_pos().x - MOVE_SPEED, get_pos().y)
 		if (get_viewport_rect().has_point(newPos)):
 			set_pos(newPos)
-			if (spaceship.get_animation() != "move_left"):
-				spaceship.set_animation("move_left")
+			#if (spaceship.get_animation() != "move_left"):
+			#	spaceship.set_animation("move_left")
 	#move_right
 	elif (Input.is_action_pressed("player_move_right")):
 		newPos = Vector2(get_pos().x + MOVE_SPEED, get_pos().y)
 		if (get_viewport_rect().has_point(newPos)):
 			set_pos(newPos)
-			if (spaceship.get_animation() != "move_right"):
-				spaceship.set_animation("move_right")				
-	else: #default set_animation
-		spaceship.set_animation("default")
+			#if (spaceship.get_animation() != "move_right"):
+			#	spaceship.set_animation("move_right")				
+#	else: #default set_animation
+		#spaceship.set_animation("default")
 
 
 
