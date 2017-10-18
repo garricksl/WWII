@@ -3,6 +3,7 @@ extends KinematicBody2D
 const MOVE_SPEED = 8
 
 func _ready():
+	#play("background_music")
 	set_process(true)
 	set_process_input(true)
 	pass
