@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://gamearea.gd" type="Script" id=1]
 [ext_resource path="res://Godot Space Shooter/Spaceship/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Godot Space Shooter/Enemy/enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Godot Space Shooter/assets/04on8-wwhkh.smp" type="Sample" id=4]
 [ext_resource path="res://Godot Space Shooter/assets/background_music/background_music.gd" type="Script" id=5]
+[ext_resource path="res://Thene_2.tres" type="Theme" id=6]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -39,5 +40,53 @@ config/polyphony = 1
 config/samples = SubResource( 1 )
 config/pitch_random = 0.0
 script/script = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+
+rect/rotation = 0.081616
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 6 )
+margin/left = 111.0
+margin/top = 766.0
+margin/right = 2537.0
+margin/bottom = 1351.0
+alignment = 0
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1440.0
+margin/top = 0.0
+margin/right = 2426.0
+margin/bottom = 358.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+flat = true
+items = [  ]
+
+[node name="MenuButton2" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 24.0
+margin/right = 1033.0
+margin/bottom = 364.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+flat = true
+items = [  ]
 
 
