@@ -1,19 +1,21 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://gamearea.gd" type="Script" id=1]
 [ext_resource path="res://Godot Space Shooter/Spaceship/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Godot Space Shooter/Enemy/enemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Godot Space Shooter/assets/04on8-wwhkh.smp" type="Sample" id=4]
-[ext_resource path="res://Godot Space Shooter/assets/background_music/background_music.gd" type="Script" id=5]
-[ext_resource path="res://Thene_2.tres" type="Theme" id=6]
+[ext_resource path="res://Godot Space Shooter/assets/04on8-wwhkh.smp" type="Sample" id=3]
+[ext_resource path="res://Godot Space Shooter/Enemy/enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Thene_2.tres" type="Theme" id=5]
+[ext_resource path="res://robisplash_button.png" type="Texture" id=6]
+[ext_resource path="res://robisplash_button_pressed.png" type="Texture" id=7]
+[ext_resource path="res://robisplash_bg.png" type="Texture" id=8]
 
-[sub_resource type="SampleLibrary" id=1]
+[sub_resource type="SampleLibrary" id=3]
 
-samples/background_music = {
+samples/WWII = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 4 )
+"sample": ExtResource( 3 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -31,22 +33,23 @@ script/script = ExtResource( 1 )
 
 transform/pos = Vector2( 1505.29, 1433.71 )
 
-[node name="enemy" parent="." instance=ExtResource( 3 )]
+[node name="SpatialSamplePlayer" type="SpatialSamplePlayer" parent="Player"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+params/volume_db = 2.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 100.0
+params/attenuation/distance_exp = 1.0
+params/emission_cone/degrees = 180.0
+params/emission_cone/attenuation_db = -6.0
+config/polyphony = 1
+config/samples = SubResource( 3 )
+
+[node name="enemy" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 347.386, -266.32 )
 transform/scale = Vector2( 0.8429, 1 )
-
-[node name="SamplePlayer2D" type="SamplePlayer2D" parent="."]
-
-params/volume_db = 0.0
-params/pitch_scale = 1.0
-params/attenuation/min_distance = 1.0
-params/attenuation/max_distance = 2048.0
-params/attenuation/distance_exp = 1.0
-config/polyphony = 1
-config/samples = SubResource( 1 )
-config/pitch_random = 0.0
-script/script = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 
@@ -55,7 +58,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = ExtResource( 6 )
+theme/theme = ExtResource( 5 )
 margin/left = 111.0
 margin/top = 766.0
 margin/right = 2537.0
@@ -120,7 +123,22 @@ margin/bottom = 1104.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/normal = ExtResource( 6 )
+textures/pressed = ExtResource( 7 )
 params/resize_mode = 0
 params/stretch_mode = 0
+
+[node name="TextureFrame" type="TextureFrame" parent="admin/TextureButton"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -762.0
+margin/top = -1022.0
+margin/right = 38.0
+margin/bottom = -572.0
+texture = ExtResource( 8 )
+stretch_mode = 0
 
 

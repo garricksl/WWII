@@ -1,9 +1,10 @@
 extends KinematicBody2D
+
 #Main File
 const MOVE_SPEED = 8
 
 func _ready():
-	#play("background_music")
+## play("WWII")
 	set_process(true)
 	set_process_input(true)
 	pass
