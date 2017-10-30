@@ -22,7 +22,17 @@ func _process(delta):
 		newPos = Vector2(get_pos().x + MOVE_SPEED, get_pos().y)
 		if (get_viewport_rect().has_point(newPos)):
 			set_pos(newPos)
-
+	
+	#move_up
+	elif (Input.is_action_pressed("player_move_up")):
+		newPos = Vector2(get_pos().x, get_pos().y - MOVE_SPEED)
+		if (get_viewport_rect().has_point(newPos)):
+			set_pos(newPos)
+			
+	elif (Input.is_action_pressed("player_move_down")):
+		newPos = Vector2(get_pos().x, get_pos().y + MOVE_SPEED)
+		if (get_viewport_rect().has_point(newPos)):
+			set_pos(newPos)
 
 
 func _input(event): #shooting
@@ -31,3 +41,4 @@ func _input(event): #shooting
 		var laser = projectile.instance()
 		get_parent().add_child(laser)
 		laser.fire(get_pos(), Vector2(0, -1))
+		
