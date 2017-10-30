@@ -16,3 +16,4 @@ func _on_Area2D_body_enter( body ):
 	if(body.is_in_group("friendly") and body.is_in_group("ship")):
 		body.queue_free()
 		queue_free()
+		get_tree().quit()

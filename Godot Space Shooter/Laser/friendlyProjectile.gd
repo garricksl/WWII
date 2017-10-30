@@ -28,4 +28,4 @@ func _on_Area2D_body_enter( body ):
 			var obj = ship.instance()
 			obj.set_pos(pos)
 			get_parent().add_child(obj)
-			increaseEnemyCounter += 2
+			increaseEnemyCounter += 1
